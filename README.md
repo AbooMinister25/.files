@@ -4,14 +4,14 @@ These are my personal collection of configuration files for my desktop.
 
 ### Softwares Used
 
-WM: BSPWM
-bar: Polybar
-editor: NeoVim
-shortcuts: sxhkd
-shell: ZSH
-terminal: alacritty
-File Manager: Thunar
-Browser: Firefox
+* WM: BSPWM
+* bar: Polybar
+* editor: NeoVim
+* shortcuts: sxhkd
+* shell: ZSH
+* terminal: alacritty
+* File Manager: Thunar
+* Browser: Firefox
 
 ## Gallery
 
