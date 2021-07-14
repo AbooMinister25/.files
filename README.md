@@ -15,7 +15,7 @@ These are my personal collection of configuration files for my desktop.
 
 ## Gallery
 
-![neofetch](screenshots/neovim.png)
+![neofetch](screenshots/neofetch.png)
 ![neovim and neofetch](screenshots/neofetchandneovim.png)
 ![neovim](screenshots/neovim.png)
 ![dashboard](screenshots/dashboard.png)
