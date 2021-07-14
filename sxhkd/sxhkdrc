@@ -1,0 +1,92 @@
+##--------------- Hotkeys ---------------##
+
+# Terminal Emulator (Alacritty)
+super + Return
+	alacritty
+
+# Take Screenshot
+Print
+	scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+##-------------- BSPWM ----------------##
+
+# Switch Workspace
+ctrl alt + {Right, Left}
+	bspc desktop -f {next.local, prev.local}
+
+# Close Application
+super + c
+	bspc node -c
+
+# Send Window to Edge of Screen
+super + {_, shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Send focused window to another workspace
+super + {_, shift + }{1-8}
+	bspc {desktop -f, node -d} '^{1-8}'
+
+# Reload sxhkdrc
+super + shift + r
+	pkill -usr1 -x sxhkd
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit, wm -r}
+
+# Fullscreen or Monocle
+super + f
+	bspc desktop -l next
+
+# Pseudo Tiled, Tiled, and Floating Mode
+super + {p, t, x}
+	bspc node -t {pseudo_tiled, tiled, floating}
+
+# Switch to last open workspacee
+alt + {Tab, grave}
+	bspc {node, desktop} -f last
+
+# Expanding Windows
+super + ctrl {Left, Right, Up, Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+
+# Shrinking Windows
+super + alt + {Left, Right, Up, Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+
+# Move Windows
+alt + a {Left, Down, Up, Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+##------------- ROFI & MENUS -------------##
+
+# App launcher
+alt + F1
+	rofi -show drun -theme ~/.config/rofi/launcher/launcher.rasi
+
+# Screenshot Menu
+ctrl + alt + s
+	sh ~/.config/rofi/screenshot/screenshot
+
+# Power Menu
+alt + shift + r
+	bash ~/.config/rofi/powermenu/powermenu
+
+# Clipboard Menu
+super + v
+	CM_LAUNCHER=rofi clipmenu \
+	-location = 1 \
+	-no-show-icons 
+
+# Help Menu
+super + space
+	bash ~/.config/sxhkd/scripts/rofi-helpmenu	
+##--------------- MEDIA KEYS ------------------##
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPrev
+	playerctl prev
