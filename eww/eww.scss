@@ -1,0 +1,55 @@
+*{
+  all: unset;
+}
+
+button {
+	all: unset;
+	padding: 10px;
+	background-color: #282c34;
+	border: 2px solid #61afef;
+	border-radius: 12px;
+}
+
+button:hover {
+	background-color: #3e4451;
+}
+
+.genwin {
+	border-radius: 16px;
+}
+
+.power {
+	font-size: 60px;
+	color: #e06c75
+}
+
+.reboot {
+	font-size: 60px;
+	color: #61afef;
+}
+
+.lock {
+	font-size: 60px;
+	color: #e5c07b;
+}
+
+.sleep {
+	font-size: 60px;
+	color: #c678dd;
+}
+
+.logout {
+	font-size: 60px;
+	color: #98c379;
+}
+
+.exit_power {
+	font-size: 40px;
+	background-color: #c8ccd4;
+	color: #282c34;
+}
+
+.goodbye_message {
+	font-size: 50px;
+	color: #b6bdca;
+}

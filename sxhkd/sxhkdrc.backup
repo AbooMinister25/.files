@@ -6,7 +6,9 @@ super + Return
 
 # Take Screenshot
 Print
-	scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+	flameshot full -c -p  /home/rcyclegar/Pictures/
+	#scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+
 ##-------------- BSPWM ----------------##
 
 # Switch Workspace
@@ -44,6 +46,19 @@ super + {p, t, x}
 # Switch to last open workspacee
 alt + {Tab, grave}
 	bspc {node, desktop} -f last
+
+# Expanding Windows
+super + ctrl {Left, Right, Up, Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+
+# Shrinking Windows
+super + alt + {Left, Right, Up, Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+
+# Move Windows
+alt + a {Left, Down, Up, Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
 ##------------- ROFI & MENUS -------------##
 
 # App launcher
@@ -54,6 +69,17 @@ alt + F1
 ctrl + alt + s
 	sh ~/.config/rofi/screenshot/screenshot
 
+# Power Menu
+alt + shift + r
+	bash ~/.config/rofi/powermenu/powermenu
+
+# Clipboard Menu
+super + v
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme ~/.config/rofi/clipboardmenu/launcher.rasi
+
+# Help Menu
+super + space
+	bash ~/.config/sxhkd/scripts/rofi-helpmenu
 ##--------------- MEDIA KEYS ------------------##
 
 XF86AudioPlay
@@ -64,3 +90,10 @@ XF86AudioNext
 
 XF86AudioPrev
 	playerctl prev
+
+XF86AudioRaiseVolume
+	pamixer -i 2
+
+
+XF86AudioLowerVolume
+	pamixer -d 2

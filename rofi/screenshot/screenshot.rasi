@@ -19,8 +19,8 @@ window {
     background-color:               @background;
     text-color:                     @foreground;
         border:                                                 1px;
-    border-radius:                  0px;
-    border-color:                                       @selected;
+    border-radius:                  1px;
+    border-color:                                       @foreground;
     width:                          171px;
     location:                       center;
     anchor:                         center;

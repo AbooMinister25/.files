@@ -7,6 +7,7 @@ These are my personal collection of configuration files for my desktop.
 * WM: BSPWM
 * bar: Polybar
 * editor: NeoVim
+* Widgets: NeoVim
 * shortcuts: sxhkd
 * shell: ZSH
 * terminal: alacritty
@@ -15,7 +16,7 @@ These are my personal collection of configuration files for my desktop.
 
 ## Gallery
 
-![neofetch](screenshots/neofetch.png)
-![neovim and neofetch](screenshots/neofetchandneovim.png)
-![neovim](screenshots/neovim.png)
-![dashboard](screenshots/dashboard.png)
+![general](screenshots/2021-08-17_18-24.png)
+![neovim](screenshots/2021-08-17_18-31.png)
+![powermenu](screenshots/2021-08-17_14-07.png)
+![dashboard](screenshots/2021-08-17_18-33.png)

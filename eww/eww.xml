@@ -1,0 +1,94 @@
+<eww>
+	<definitions>
+		<def name="power">
+			<box space_evenly="true">
+				<button class="power" onclick="systemctl poweroff"></button>
+			</box>
+		</def>
+		<def name="reboot">
+			<box space_evently="true">
+				<button class="reboot" onclick="systemctl reboot"></button>
+			</box>
+		</def>
+		<def name="lock">
+			<box space_evenly="true">
+				<button class="lock" onclick="eww close-all; betterlockscreen -l"></button>
+			</box>
+		</def>
+		<def name="sleep">
+			<box space_evenly="true">
+				<button class="sleep" onclick="bash ~/.config/eww/scripts/sleep.sh"></button>
+			</box>
+		</def>
+		<def name="logout">
+			<box space_evenly="true">
+				<button class="logout" onclick="bash ~/.config/eww/scripts/logout.sh"></button>
+			</box>
+		</def>
+		<def name="exit_power">
+			<box class="exit_power" space_evenly="true">
+				<button class="logout" onclick="~/eww/target/release/eww close-all">⨉</button>
+			</box>
+		</def>
+		<def name="blur">
+			<box class="blur" orientation="v">
+			</box>
+		</def>
+		<def name="goodbye_message">
+			<box class="goodbye_message">
+				Goodbye, Rayyan
+			</box>
+		</def>
+	</definitions>
+	
+	<windows>
+		<window name="shutdown" stacking="fg" focusable="false" screen="1">
+			<geometry x="568px" y="450px" width="120px" height="120px"/>
+			<widget>
+				<power />
+			</widget>
+		</window>
+		<window name="reboot" stacking="fg" focusable="false" screen="1">
+			<geometry x="718px" y="450px" width="120px" height="120px"/>
+			<widget>
+				<reboot />
+			</widget>
+		</window>
+		<window name="lock" stacking="fg" focusable="false" screen="1">
+			<geometry x="868px" y="450px" width="120px" height="120px"/>
+			<widget>
+				<lock />
+			</widget>
+		</window>
+		<window name="sleep" stacking="fg" focusable="false" screen="1">
+			<geometry x="1018px" y="450px" width="120px" height="120px"/>
+			<widget>
+				<sleep />
+			</widget>
+		</window>
+		<window name="logout" stacking="fg" focusable="false" screen="1">
+			<geometry x="1168px" y="450px" width="120px" height="120px"/>
+			<widget>
+				<logout />
+			</widget>
+		</window>
+		<window name="exit" stacking="fg" focusable="false" screen="1">
+			<geometry x="0px" y="0px" width="70px" />
+			<widget>
+				<exit_power />
+			</widget>
+		</window>
+		<window name="blur" stacking="fg">
+			<geometry x="0px" y="0px" width="100%" height="100%"/>
+			<widget>
+				<blur />
+			</widget>
+		</window>
+		<window name="gmessage">
+			<geometry x="730px" y="350px" width="200px" height="80px" />
+			<widget>
+				<goodbye_message />
+			</widget>
+		</window>
+	</windows>
+</eww>

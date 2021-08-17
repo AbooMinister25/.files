@@ -1,0 +1,16 @@
+format = """
+[┌────](bold green) $directory $git_branch $python
+[│](bold green)
+[└─>](bold green) """
+
+[directory]
+style = "yellow"
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "[$symbol$branch]($style) "
+
+[python]
+format = "[$virtualenv]($style)"
+style = "bold blue"

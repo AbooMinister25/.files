@@ -6,7 +6,9 @@ super + Return
 
 # Take Screenshot
 Print
-	scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+	flameshot full -c -p  /home/rcyclegar/Pictures/
+	#scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+
 ##-------------- BSPWM ----------------##
 
 # Switch Workspace
@@ -69,17 +71,19 @@ ctrl + alt + s
 
 # Power Menu
 alt + shift + r
-	bash ~/.config/rofi/powermenu/powermenu
+	~/eww/target/release/eww open-many blur shutdown reboot lock sleep logout gmessage
+
+# Close all eww widgets
+alt + shift + x
+	~/eww/target/release/eww close-all
 
 # Clipboard Menu
 super + v
-	CM_LAUNCHER=rofi clipmenu \
-	-location = 1 \
-	-no-show-icons 
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme ~/.config/rofi/clipboardmenu/launcher.rasi
 
 # Help Menu
 super + space
-	bash ~/.config/sxhkd/scripts/rofi-helpmenu	
+	bash ~/.config/sxhkd/scripts/rofi-helpmenu
 ##--------------- MEDIA KEYS ------------------##
 
 XF86AudioPlay
@@ -90,3 +94,9 @@ XF86AudioNext
 
 XF86AudioPrev
 	playerctl prev
+
+XF86AudioRaiseVolume
+	pamixer -i 2
+
+XF86AudioLowerVolume
+	pamixer -d 2

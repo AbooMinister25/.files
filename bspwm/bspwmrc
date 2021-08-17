@@ -1,10 +1,10 @@
 #! /bin/sh
 
-BLUE = #42A5F5
-RED = #EC7875
-YELLOW = #FDD835
-GREEN = #61C766
-MAGENTA = #BA68C8
+BLUE="#42A5F5"
+RED="#EC7875"
+YELLOW="#FDD835"
+GREEN="#61C766"
+MAGENTA="#BA68C8"
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -17,8 +17,8 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc config focused_border_color = "$BLUE"
-bpc config active_border_colo = "${MAGENTA}"
+bspc config focused_border_color = "#42A5F5"
+bspc config active_border_color = "#BA68C8"
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
