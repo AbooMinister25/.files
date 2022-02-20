@@ -1,0 +1,62 @@
+(defwidget power []
+    (box
+    	(button :class "power" 
+	:onclick "systemctl poweroff"
+	"")))
+
+(defwidget reboot []
+    (box
+	(button :class "reboot" 
+	:onclick "systemctl reboot"
+	)))
+
+(defwidget lock []
+    (box
+	(button :class "lock"
+	:onclick "eww close-all; betterlockscreen -l"
+	)))
+
+(defwidget sleep []
+    (box
+	(button :class "sleep"
+	:onclick "bash ~/.config/eww/scripts/sleep.sh"
+	)))
+
+(defwidget logout []
+    (box
+       (button :class "logout"
+       :onclick "bash ~/.config/eww/scripts/logout.sh"
+       )))
+
+(defwidget goodbye_message []
+    (box :class "logout"
+    "Goodbye, Rayyan"))
+
+(defwidget blur []
+    (box :class "blur"))
+
+
+(defwindow shutdown
+    :geometry (geometry :x "568px"
+		        :y "450px"
+			:width "120px"
+			:height "120px")
+    :stacking "fg"
+    (power))
+
+(defwindow reboot
+    :geometry (geometry :x "718px"
+                        :y "450px"
+                        :width "120px"
+                        :height "120px")
+    :stacking "fg"
+    (reboot))
+
+(def-window shutdown
+    :geometry (geometry :x "580px"
+                        :y "450px"
+                        :width "120px"
+                        :height "120px")
+    :stacking "fg"
+    (power))
+

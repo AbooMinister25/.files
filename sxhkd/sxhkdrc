@@ -24,8 +24,8 @@ super + {_, shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # Send focused window to another workspace
-super + {_, shift + }{1-8}
-	bspc {desktop -f, node -d} '^{1-8}'
+super + {_, shift + }{1-9}
+	bspc {desktop -f, node -d} '^{1-9}'
 
 # Reload sxhkdrc
 super + shift + r
@@ -59,6 +59,13 @@ super + alt + {Left, Right, Up, Down}
 alt + a {Left, Down, Up, Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# Disable picom
+super + alt + x
+	killall picom
+
+# Enable Picom
+super + alt + p
+	picom --experimental-backends -b
 ##------------- ROFI & MENUS -------------##
 
 # App launcher

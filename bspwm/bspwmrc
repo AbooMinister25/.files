@@ -6,9 +6,18 @@ YELLOW="#FDD835"
 GREEN="#61C766"
 MAGENTA="#BA68C8"
 
+
+if [xrandr xrandr | grep -sw 'connected' | wc -l > 1]; then
+	xrandr --output DP-0 --primary --rotate normal
+	xrandr --output HDMI-0 --rotate normal --left-of DP-0
+fi
+
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor DP-0 -d VI VII VIII IX X
+bspc monitor HDMI-0 -d I II III IV V VI
+
 
 bspc config border_width         2
 bspc config window_gap          12

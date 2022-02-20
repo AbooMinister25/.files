@@ -39,6 +39,10 @@
 				Goodbye, Rayyan
 			</box>
 		</def>
+		<def name="search">
+			<box class="search">
+			</box>
+		</def>
 	</definitions>
 	
 	<windows>
